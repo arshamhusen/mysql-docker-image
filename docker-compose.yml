@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+  mysql-development:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wamco_dev
+    ports:
+      - "3308:3306"
+
+  admin:
+    image: adminer
+    ports:
+      - "8080:8080"
+
+  mysql-production:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: W@mc0@29112021
+      MYSQL_DATABASE: wamco_prod
+    ports:
+      - "3309:3306"
+
+  mysql-test:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wamco_test
+    ports:
+      - "3310:3306"
